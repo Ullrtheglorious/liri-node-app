@@ -85,7 +85,7 @@ function myTweets() {
 function randomThing() {
     fs.readFile('random.txt', "utf8", function (error, data) {
         var txt = data.split(',');
-        // spotifySong(txt[1]);
+        spotifySong(txt[1]);
         console.log(txt)
     });
 }
@@ -95,7 +95,7 @@ function movieThis(movie) {
     if (title === '') {
         title = "Mr. Nobody"
     }
-    var queryUrl = "http://www.omdbapi.com/?t=" + title + "&y=&plot=short&apikey=" + omdbApi.key;
+    var queryUrl = "https://www.omdbapi.com/?t=" + title + "&y=&plot=short&apikey=" + omdbApi.key;
     request(queryUrl, function (error, response, body) {
         if (!error && response.statusCode === 200) {
             var body = JSON.parse(body);
